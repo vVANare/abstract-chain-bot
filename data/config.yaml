@@ -1,0 +1,86 @@
+settings:
+  # number of concurrent threads to use
+  threads: 1
+
+  # account range. 
+  # BY DEFAULT: [0, 0] - all accounts
+  # [3, 5] - only 3 4 5 accounts
+  # [7, 7] - only 7 account
+  account_range: [0, 0]
+
+  # number of retries for ANY action
+  attempts: 3
+
+  # number of retries for tasks at abstract.deform.cc
+  tasks_attempts: 3
+
+  # pause between attempts
+  pause_between_attempts: [5, 15]
+
+  # pause in seconds between accounts
+  random_pause_between_accounts: [3, 10]
+
+  # pause in seconds between actions
+  random_pause_between_actions: [10, 20]
+
+  # pause in seconds between swaps
+  random_pause_between_swaps: [60, 90]
+
+  # pause in seconds before claiming badges
+  pause_before_claiming_badges: [20, 30]
+
+  # pause in seconds between badges mint
+  random_pause_between_badges_mint: [20, 30]
+
+  # pause in seconds after bridge
+  pause_after_bridge: [60, 100]
+  
+  # pause in seconds after withdrawal
+  pause_after_withdrawal: [60, 100]
+
+  show_browser_window: true
+
+
+
+# --------------------------- #
+rpcs:
+  arbitrum_rpc: ["https://arbitrum.llamarpc.com"]
+  abstract_rpc: ["https://api.mainnet.abs.xyz"]
+  
+
+bridge:
+  # how much ETH to bridge
+  eth_to_bridge: [0.001, 0.0015]
+
+
+# --------------------------- #
+withdraw:
+  withdraw_enabled: true
+  cex: "bitget" # okx or bitget
+  api_key: "YOUR_API"
+  secret_key: "YOUR_SECRET"
+  password: "PASSWORD" # need for bitget and OKX 
+  amount: [0.001, 0.0015]
+  network: "Arbitrum" # Arbitrum
+
+
+
+abs:
+  # minimal balance in USD on ABS to continue
+  minimal_usd_balance: 1
+  # percent of balance to swap for every swap on ABS
+  balance_percent_to_swap: [80, 85]
+  # number of swaps for one account in one run
+  number_of_swaps: [3, 5]
+  # number of votes for one account in one run
+  number_of_votes: [1, 3]
+
+  tasks: ["logs"]
+  # Example: tasks: ["swaps", "votes", "badges"]
+  # "connect_socials" - connect socials to account
+  # "swaps" - swaps on abs.xyz | using tokens: ETH, PENGU, USDT, USDC
+  # "votes" - votes on abs.xyz | random app for voting
+  # "badges" - badges on abs.xyz | get all available badges
+  # "logs" - save accounts info to data/progress.xlsx
+  # "collect_all_to_eth" - collect all tokens to ETH at the end
+  # "myriad" - myriad.markets badge
