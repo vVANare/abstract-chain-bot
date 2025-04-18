@@ -7,17 +7,22 @@ Bot for abstract chain automation.
 git clone https://github.com/vVANare/abstract-chain-bot
 ```
 
-2. **Install all required dependencies**
+2. **Open folder**
+```sh
+cd abstract-chain-bot
+```
+
+3. **Install all required dependencies**
 ```sh
 npm install
 ```
 
-3. **Install Playwright**
+4. **Install Playwright**
 ```sh
 npx playwright install
 ```
 
-4. **Run the bot**
+5. **Run the bot**
 ```sh
 npm start
 ```
